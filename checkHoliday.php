@@ -222,7 +222,7 @@ class checkHoliday{
 function calc_yesterday($date){
 	do{
 		$date=strftime('%Y-%m-%d', strtotime('-1 day', strtotime($date)));
-	}while(!self::check_holiday($date));
+	}while(!checkHoliday::check_holiday($date));
 	return $date;
 }
 
@@ -233,14 +233,14 @@ function calc_yesterday($date){
 function calc_nextday($date){
 	do{
 		$date=strftime('%Y-%m-%d', strtotime('+1 day', strtotime($date)));
-	}while(!self::check_holiday($date));
+	}while(!checkHoliday::check_holiday($date));
 	return $date;
 }
 
 function calc_preday($date){
     do{
         $date=strftime('%Y-%m-%d', strtotime('-1 day', strtotime($date)));
-    }while(!self::check_holiday($date));
+    }while(!checkHoliday::check_holiday($date));
     return $date;
 }
 
